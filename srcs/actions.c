@@ -6,7 +6,7 @@
 /*   By: scuter <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 21:17:01 by scuter            #+#    #+#             */
-/*   Updated: 2022/02/23 19:31:18 by scuter           ###   ########.fr       */
+/*   Updated: 2022/02/25 13:46:58 by scuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,11 @@
 
 void	taking_forks(t_philo *philo)
 {
-	if ((philo->philo_id) % 2 == 0 && philo->philo_id + 1 != philo->nbr_philo)
-	{
-		pthread_mutex_lock(philo->r_f);
-		pthread_mutex_lock(philo->l_f);
-	}
-	else
-	{
-		pthread_mutex_lock(philo->l_f);
-		pthread_mutex_lock(philo->r_f);
-	}
+	pthread_mutex_lock(philo->l_f);
+	if (philo->nbr_philo == 1)
+		printf("%ld %d has taken a fork\n", \
+			get_time() - philo->start_time, philo->philo_id + 1);
+	pthread_mutex_lock(philo->r_f);
 	pthread_mutex_lock(&philo->lock_print);
 	if (philo->stop != 1)
 	{

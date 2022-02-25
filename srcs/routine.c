@@ -6,7 +6,7 @@
 /*   By: scuter <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 20:43:26 by scuter            #+#    #+#             */
-/*   Updated: 2022/02/25 03:32:08 by scuter           ###   ########.fr       */
+/*   Updated: 2022/02/25 13:37:43 by scuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	meal_count(t_philo *philo)
 		}
 		if (enough)
 		{
-			i = -1;
+			i = 0;
 			while (i < philo[i].nbr_philo)
 			{
 				philo[i].stop = 1;
@@ -48,6 +48,8 @@ void	*routine(void *ptr)
 	philo = (t_philo *)ptr;
 	philo->time_of_last_meal = get_time();
 	philo->start_time = philo->time_of_last_meal;
+	if (philo->philo_id % 2 == 0)
+		usleep(philo->time_to_eat * 1000 / 2);
 	while (!philo->data->dead)
 	{
 		if (philo->data->dead || philo->stop || meal_count(philo))
@@ -74,7 +76,7 @@ static void	dead_philo(t_philo *philo, int i)
 	pthread_mutex_lock(&philo->lock_print);
 	printf("%ld %d died\n", get_time() - philo->start_time,
 		philo[i].philo_id + 1);
-	i = -1;
+	i = 0;
 	while (i < philo[i].nbr_philo)
 	{
 		philo[i].stop = 1;

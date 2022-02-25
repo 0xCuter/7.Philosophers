@@ -6,7 +6,7 @@
 /*   By: scuter <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 16:52:17 by scuter            #+#    #+#             */
-/*   Updated: 2022/02/25 10:25:16 by scuter           ###   ########.fr       */
+/*   Updated: 2022/02/25 13:51:41 by scuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	precise_usleep(int ms)
 	long	time;
 
 	time = get_time();
-	usleep(ms * 950);
+	usleep(ms * 942);
 	while (get_time() < time + ms)
-		usleep(ms * 5);
+		usleep(ms * 3);
 }
