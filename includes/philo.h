@@ -6,7 +6,7 @@
 /*   By: scuter <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:53:13 by scuter            #+#    #+#             */
-/*   Updated: 2022/02/25 03:15:31 by scuter           ###   ########.fr       */
+/*   Updated: 2022/02/25 10:23:50 by scuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_philo
 	struct s_data	*data;
 }	t_philo;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	int				nbr_philo;
 	int				philo_id;

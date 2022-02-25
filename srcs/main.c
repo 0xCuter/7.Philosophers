@@ -6,7 +6,7 @@
 /*   By: scuter <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 14:52:46 by scuter            #+#    #+#             */
-/*   Updated: 2022/02/25 03:04:58 by scuter           ###   ########.fr       */
+/*   Updated: 2022/02/25 10:24:42 by scuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	check_args(int argc, char **argv)
 	if (argc < 5 || argc > 6)
 		invalid_arg();
 	argv++;
-	while(*argv)
+	while (*argv)
 	{
 		if (!str_is_digit(*argv) || !ft_atoi(*argv))
 			invalid_arg();
@@ -25,7 +25,7 @@ static void	check_args(int argc, char **argv)
 	}
 }
 
-int	main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_data	data;
 
@@ -39,4 +39,3 @@ int	main (int argc, char **argv)
 	free_all(&data);
 	return (0);
 }
-

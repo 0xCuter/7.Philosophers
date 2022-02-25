@@ -6,7 +6,7 @@
 /*   By: scuter <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 17:09:11 by scuter            #+#    #+#             */
-/*   Updated: 2022/02/25 03:31:34 by scuter           ###   ########.fr       */
+/*   Updated: 2022/02/25 10:24:31 by scuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	init_data(t_data *data, int argc, char **argv)
 {
 	data->nbr_philo = ft_atoi(argv[1]);
 	if (data->nbr_philo < 1)
-			invalid_arg();
+		invalid_arg();
 	data->time_to_die = ft_atoi(argv[2]);
 	data->time_to_eat = ft_atoi(argv[3]);
 	data->time_to_sleep = ft_atoi(argv[4]);
